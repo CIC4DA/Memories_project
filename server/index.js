@@ -3,8 +3,12 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 
+import postRoutes from "./routes/posts.js"
+
 const app = express(); // we are initiallizing the app
 
+// adding prefix to routes
+app.use('/posts',postRoutes); // it basically said that every route start with localhost:5000/posts
 
 // general setup
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
