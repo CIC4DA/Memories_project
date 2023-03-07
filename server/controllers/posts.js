@@ -1,5 +1,25 @@
 // this is going to contain all the logic for routes
+import PostMessage from "../modals/postsMessage.js";
 
-export const getPosts = (req,res) => {
-    res.send("THis works");
+export const getPosts = async (req,res) => {
+    try {
+        const  PostMessages = await postMessage.find();
+
+        console.log(PostMessages);
+        res.status(200).json(PostMessages);
+    } catch (error) {
+        res.status(404).json({message : error.message});
+    }
+};
+
+export const createPosts = async (req,res) => {
+    const post = req.body;
+    const newPost = new PostMessage(post);
+
+    try {
+        await newPost.save();
+        res.status(201).json(newPost);
+    } catch (error) {
+        res.status(409).json({message : error.message});
+    }
 };
