@@ -1,18 +1,15 @@
 import * as api from '../api';
-// we import everything from api as api
 
-// ACTIONS
-// action creators --> the function that returns an action
+// Action creaters --> functions that return actions
 
-
-export const getPosts = ()=> async(dispatch) =>{
-    
+export const getPosts = () => async(dispatch) => {
     try {
         const {data} = await api.fetchPosts();
-        dispatch({type: 'FETCH_ALL', payload: data});
+        
+        dispatch({type : 'FETCH_ALL', payload: data});
 
     } catch (error) {
-        console.log(error.message);
+        console.log("ERROR HEREHEEEE " );
     }
     
 }
