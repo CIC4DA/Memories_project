@@ -7,15 +7,23 @@ import postRoutes from "./routes/posts.js"
 
 const app = express(); // we are initiallizing the app
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 // general setup
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 // adding prefix to routes
+<<<<<<< Updated upstream
 app.use('/posts',postRoutes); // it basically said that every route start with localhost:5000/posts
+=======
+// it basically said that every route start with localhost:5000/posts
+app.use('/posts',postRoutes);
+>>>>>>> Stashed changes
 
 // connecting server with database 
 const CONNECTION_URL = "mongodb://dhruvjain9100:jain12345@ac-wqctfjb-shard-00-00.1rsuw5m.mongodb.net:27017,ac-wqctfjb-shard-00-01.1rsuw5m.mongodb.net:27017,ac-wqctfjb-shard-00-02.1rsuw5m.mongodb.net:27017/?ssl=true&replicaSet=atlas-39lfzg-shard-0&authSource=admin&retryWrites=true&w=majority";

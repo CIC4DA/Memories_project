@@ -1,6 +1,7 @@
 // in this file where we are going to connect our react application to index html file 
 
 import React from "react";
+<<<<<<< Updated upstream
 import {createRoot} from "react-dom/client";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
@@ -22,3 +23,19 @@ root.render(
 
 // what provider does is --> it is going to keep track of the store, which is that global state that allow us to access that store from anywhere 
 
+=======
+import ReactDOM  from "react-dom";
+import { Provider } from "react-redux";
+import {createStore, applyMiddleware, compose} from "redux";
+import thunk from 'redux-thunk';
+import App from "./App";
+import reducers from "./reducers";
+
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);
+>>>>>>> Stashed changes
