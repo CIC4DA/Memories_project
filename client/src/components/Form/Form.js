@@ -18,8 +18,14 @@ const Form = () => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-
         dispatch(createPost(postData));
+        setPostData({
+            creator: '',
+            title : '',
+            message : '',
+            tags : '',
+            selectedFile : ''
+        });
     }
     
     const clear = () =>{
